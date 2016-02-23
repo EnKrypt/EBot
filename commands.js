@@ -1,13 +1,13 @@
 'use strict';
 
-module.exports = function(client, message, to){
+module.exports = function(message){
 	var args=message.split(" ");
 	var command=args.shift().substring(1);
 	
 	try{
-		require('./commands/'+command)(client, args, to);
+		return require('./commands/'+command)(args);
 	}
 	catch(e){
-		client.say(to, command+" is not a valid command");
+		return (command+" is not a valid command");
 	}
 }
