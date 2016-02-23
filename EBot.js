@@ -33,6 +33,7 @@ client.addListener('message', function(from, to, message){
 		client.say(to, require('./commands')(client, message));
 	}
 });
+
 client.addListener('raw', function(message){
 	if (message.rawCommand=='JOIN'){
 		for (var i=0;i<message.args.length;i++){
@@ -50,6 +51,13 @@ client.addListener('raw', function(message){
 	}
 	console.log((message.nick || "")+" "+message.rawCommand+" "+message.args.join(" "));
 });
+
+client.addListener('join', function(channel, user, message){
+	if (user!=nick){
+		client.say(channel, "Welcome to "+channel+", "+user);
+	}
+});
+
 client.addListener('error', function(message){
 	console.log("Error : "+message);
-})
+});
