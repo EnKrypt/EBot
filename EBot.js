@@ -2,7 +2,8 @@
 
 //Dependencies
 var irc=require('irc'),
-	rls=require('readline-sync');
+	rls=require('readline-sync'),
+	fs=require('fs');
 	
 //Configure EBot	
 var host="localhost";
@@ -40,6 +41,11 @@ client.addListener('message', function(from, to, message){
 			to: to!=nick?to:from
 		};
 		client.say(context.to, require('./commands')(context));
+	}
+	else if (channels.indexOf(to.toUpperCase())!=-1 && message.length<512){
+		fs.appendFile("./quotes.txt", "\r\n\""+message+"\" ~ "+from, function(err){
+			if (err) console.log(err.stack);
+		})
 	}
 });
 
