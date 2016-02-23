@@ -60,7 +60,7 @@ client.addListener('raw', function(message){
 	if (message.rawCommand=='PART'||message.rawCommand=='KICK'){
 		for (var i=0;i<message.args.length;i++){
 			if (channels.indexOf(message.args[i].toUpperCase())!=-1){
-				channels.pop(message.args[i].toUpperCase());
+				channels.splice(channels.indexOf(message.args[i].toUpperCase()),1);
 			}
 		}
 	}
