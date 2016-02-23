@@ -27,10 +27,18 @@ var client=new irc.Client(host,"EBot", {
 
 client.addListener('message', function(from, to, message){
 	if (message[0]==delim){
-		if (to==nick){
-			to=from;
-		}
-		client.say(to, require('./commands')(client, message));
+		var context={
+			channels: channels,
+			delim: delim,
+			client: client,
+			from: from,
+			host: host,
+			message: message,
+			nick: nick,
+			port: port,
+			to: to
+		};
+		client.say(to!=nick?to:from, require('./commands')(context));
 	}
 });
 

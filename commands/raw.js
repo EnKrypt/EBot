@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = function(client, args){
-	client.send.apply(client, args);
+module.exports = function(context){
+	context.client.send.apply(context.client, context.args);
 }

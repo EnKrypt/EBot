@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = function(client, args){
-	return args.join(" ");
+module.exports = function(context){
+	return context.args.join(" ");
 }
