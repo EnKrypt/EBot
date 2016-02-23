@@ -9,6 +9,7 @@ var host="localhost";
 var port=6667;
 var channels=[];
 
+GLOBAL.mode="";
 var nick="EBot";
 var delim="!";
 
