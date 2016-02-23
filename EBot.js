@@ -37,9 +37,9 @@ client.addListener('message', function(from, to, message){
 			message: message,
 			nick: nick,
 			port: port,
-			to: to
+			to: to!=nick?to:from
 		};
-		client.say(to!=nick?to:from, require('./commands')(context));
+		client.say(context.to, require('./commands')(context));
 	}
 });
 

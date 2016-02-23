@@ -5,8 +5,8 @@ module.exports = function(context){
 	context.command=context.args.shift().substring(1).toLowerCase();
 	
 	try{
-		var output=loadcommand(context);
-		return require('./modes/'+GLOBAL.mode.toLowerCase())(output);
+		var modetemplate=require('./modes/'+GLOBAL.mode.toLowerCase());
+		return modetemplate(loadcommand(context));
 	}
 	catch(e){
 		return loadcommand(context);
