@@ -92,3 +92,20 @@
 "Never quote quotes unless you want to be quoted in the qoutes that quoted those quotes that had quoten quotes" ~ EnKrypt
 "pibot is lame" ~ Doctorly
 "You are now reading a quote" ~ EnKrypt
+"Yeah, quotes are working properly." ~ EnKrypt
+"TIL everywhere is bullshit" ~ ConsciousCode
+"EBot, stop." ~ EnKrypt
+"Beep boop" ~ ConsciousCode
+"This is the longest EBot has been up without someone having crashed it" ~ EnKrypt
+"Yeah, I should fix that" ~ EnKrypt
+"Just blocking QUIT and PART should do it" ~ EnKrypt
+"No, I might need PART" ~ EnKrypt
+"Nvm, I know what to do." ~ EnKrypt
+"I've never had banana bread. I don't usually like things in general with banana in it." ~ EnKrypt
+"But banana bread sounds like a combination that's nice" ~ EnKrypt
+"It has all the best qualities of a banana without the downsides" ~ ConsciousCode
+"I'm guessing it would have a sort of cake-y texture?" ~ EnKrypt
+"Unknown Command" ~ EnKrypt
+"It seemed relatively fizzy when I tried it" ~ ConsciousCode
+"Even when the hole was clean, I had to really squeeze the milk jug to get air flow" ~ ConsciousCode
+"So I think it IS actually under a higher pressure than normal" ~ ConsciousCode

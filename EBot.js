@@ -42,7 +42,7 @@ client.addListener('message', function(from, to, message){
 		};
 		client.say(context.to, require('./commands')(context));
 	}
-	else if (channels.indexOf(to.toUpperCase())!=-1 && message.length<512){
+	else if (channels.indexOf(to.toUpperCase())!=-1 && message.length<512 && message.length>10){
 		fs.appendFile("./quotes.txt", "\r\n\""+message+"\" ~ "+from, function(err){
 			if (err) console.log(err.stack);
 		})
