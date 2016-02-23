@@ -27,7 +27,7 @@ var client=new irc.Client(host,"EBot", {
 
 client.addListener('message', function(from, to, message){
 	if (message[0]==delim){
-		client.say(to, "Sample command");
+		require('commands')(client, message, to);
 	}
 });
 client.addListener('raw', function(message){
