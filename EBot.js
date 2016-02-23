@@ -27,7 +27,10 @@ var client=new irc.Client(host,"EBot", {
 
 client.addListener('message', function(from, to, message){
 	if (message[0]==delim){
-		client.say(to, require('commands')(message));
+		if (to==nick){
+			to=from;
+		}
+		client.say(to, require('./commands')(client, message));
 	}
 });
 client.addListener('raw', function(message){
@@ -45,4 +48,8 @@ client.addListener('raw', function(message){
 			}
 		}
 	}
+	console.log((message.nick || "")+" "+message.rawCommand+" "+message.args.join(" "));
 });
+client.addListener('error', function(message){
+	console.log("Error : "+message);
+})
