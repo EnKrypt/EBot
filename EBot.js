@@ -64,7 +64,9 @@ client.addListener('raw', function(message){
 			}
 		}
 	}
-	console.log((message.nick || "")+" "+message.rawCommand+" "+message.args.join(" "));
+	if (message.rawCommand!="PING"){
+		console.log((message.nick || "")+" "+message.rawCommand+" "+message.args.join(" "));
+	}
 });
 
 client.addListener('join', function(channel, user, message){
