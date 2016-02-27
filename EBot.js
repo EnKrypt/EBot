@@ -10,9 +10,12 @@ var host="localhost";
 var port=6667;
 var channels=[];
 
-GLOBAL.mode="";
 var nick="EBot";
 var delim="!";
+
+//Initialize states
+GLOBAL.mode="";
+GLOBAL.greet=true;
 
 //Details about the IRC environment
 console.log("IRC Bot by EnKrypt");
@@ -70,7 +73,7 @@ client.addListener('raw', function(message){
 });
 
 client.addListener('join', function(channel, user, message){
-	if (user!=nick){
+	if (user!=nick && GLOBAL.greet){
 		client.say(channel, "Welcome to "+channel+", "+user);
 	}
 });
