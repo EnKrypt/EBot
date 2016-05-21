@@ -1,6 +1,7 @@
 EBot is an IRC bot written in node.js
 
 Help/Commands :
+!currency <amount> <from code> <to code> - Converts a certain amount from one currency to another
 !echo <text> - Makes EBot say <text> (Aliases: !say)
 !greet - Toggles whether or not EBot will greet users on channel join (True by default)
 !help - Links to this help page
