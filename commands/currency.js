@@ -17,11 +17,11 @@ module.exports = function(context){
 					context.client.say(context.to, "Invalid currency code");
 					return;
 				}
-				try{
-					context.client.say(context.to, context.args[0]+" "+context.args[1]+" is "+(parseFloat(context.args[0])*rate)+" "+context.args[2]);
-				}
-				catch(e){
+				if (isNaN(parseFloat(context.args[0]))){
 					context.client.say(context.to, "Argument <amount> must be a number");
+				}
+				else{
+					context.client.say(context.to, context.args[0]+" "+context.args[1]+" is "+(parseFloat(context.args[0])*rate)+" "+context.args[2]);
 				}
 			}
 			else{
