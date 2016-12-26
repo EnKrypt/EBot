@@ -2,7 +2,7 @@
 
 module.exports = function(context){
 	context.args=context.message.split(" ");
-	context.command=context.args.shift().substring(1).toLowerCase();
+	context.command=context.args.shift().substring(1).toLowerCase().split("/")[0];
 	
 	try{
 		var modetemplate=require('./modes/'+GLOBAL.mode.toLowerCase());
