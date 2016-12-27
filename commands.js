@@ -5,7 +5,7 @@ module.exports = function(context){
 	context.command=context.args.shift().substring(1).toLowerCase().split("/")[0];
 	
 	try{
-		var modetemplate=require('./modes/'+GLOBAL.mode.toLowerCase());
+		var modetemplate=require('./modes/'+GLOBAL.mode.toLowerCase().split("/")[0]);
 		return modetemplate(loadcommand(context));
 	}
 	catch(e){
